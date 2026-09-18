@@ -1,0 +1,252 @@
+/* ==========================================================
+   1. RESET & VARIABLES
+   ========================================================== */
+/* Root digunakan untuk mendefinisikan variabel global CSS */
+:root {
+    --primary-color: #0d9488;       /* Warna utama (Teal) */
+    --secondary-color: #0f172a;     /* Warna sekunder (Dark Blue) */
+    --text-color: #334155;          /* Warna teks utama */
+    --bg-light: #f0fdfa;            /* Background terang */
+    --white: #ffffff;               /* Warna putih */
+    --font-main: 'Poppins', sans-serif; /* Font utama */
+}
+
+/* Reset default margin dan padding semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar elemen */
+}
+
+/* Styling dasar body */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6; /* Jarak antar baris teks */
+    scroll-behavior: smooth; /* Scroll halus */
+}
+
+/* Menghilangkan garis bawah pada link */
+a { text-decoration: none; color: inherit; }
+/* Menghilangkan bullet pada list */
+ul { list-style: none; }
+
+/* Container untuk membatasi lebar konten dan center */
+.container {
+    max-width: 1100px;
+    margin: 0 auto; /* Center horizontal */
+    padding: 0 20px; /* Padding kiri-kanan untuk mobile */
+}
+
+/* ==========================================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================================== */
+/* Judul section */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    position: relative; /* Untuk posisi pseudo-element */
+}
+/* Garis bawah dekoratif pada judul section */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px; /* Sudut membulat */
+}
+/* Background terang */
+.bg-light { background-color: var(--bg-light); }
+/* Padding section */
+.section { padding: 80px 0; }
+
+/* ==========================================================
+   3. NAVBAR
+   ========================================================== */
+.navbar {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Bayangan halus */
+    position: sticky; /* Menempel di atas saat scroll */
+    top: 0;
+    z-index: 100; /* Agar selalu di atas konten lain */
+    padding: 15px 0;
+}
+/* Flexbox untuk tata letak navbar */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo kiri, menu kanan */
+    align-items: center;
+}
+/* Styling logo */
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--secondary-color); }
+.logo span { color: var(--primary-color); } /* Titik berwarna */
+
+/* Menu navigasi */
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links a { font-weight: 500; transition: color 0.3s; } /* Transisi warna */
+.nav-links a:hover { color: var(--primary-color); } /* Warna saat hover */
+
+/* Tombol kontak khusus */
+.btn-contact {
+    background: var(--primary-color);
+    color: var(--white) !important; /* Paksa warna putih */
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+/* ==========================================================
+   4. HERO SECTION
+   ========================================================== */
+.hero {
+    padding: 100px 0;
+    /* Gradient background dari terang ke agak gelap */
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+}
+/* Flexbox untuk teks dan gambar */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Jarak antar elemen */
+}
+/* Styling judul hero */
+.hero-text h2 { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 10px; }
+.hero-text h2 span { color: var(--primary-color); } /* Nama berwarna */
+.hero-text p { margin-bottom: 25px; max-width: 500px; }
+
+/* Gambar profil bulat */
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Membuat bulat */
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    border: 5px solid var(--white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Bayangan */
+}
+/* Container tombol */
+.hero-buttons { display: flex; gap: 15px; }
+/* Styling dasar tombol */
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s; /* Animasi */
+    display: inline-block;
+}
+/* Tombol utama */
+.btn.primary { background: var(--primary-color); color: var(--white); }
+.btn.primary:hover { background: #0f766e; transform: translateY(-2px); } /* Naik saat hover */
+/* Tombol sekunder */
+.btn.secondary { border: 2px solid var(--primary-color); color: var(--primary-color); }
+.btn.secondary:hover { background: var(--primary-color); color: var(--white); }
+
+/* ==========================================================
+   5. SKILLS GRID
+   ========================================================== */
+/* Grid otomatis untuk kartu skill */
+.skills-grid {
+    display: grid;
+    /* auto-fit: menyesuaikan jumlah kolom, minmax: lebar minimal 200px */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+/* Kartu skill individual */
+.skill-card {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Bayangan halus */
+    border-bottom: 3px solid var(--primary-color); /* Garis bawah aksen */
+}
+
+/* ==========================================================
+   6. PROJECTS GRID
+   ========================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+/* Kartu proyek */
+.project-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden; /* Agar gambar tidak keluar dari border radius */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s; /* Animasi saat hover */
+}
+.project-card:hover { transform: translateY(-5px); } /* Efek naik */
+/* Placeholder gambar proyek */
+.project-img {
+    height: 180px;
+    background: #e2e8f0;
+}
+.project-card h3 { padding: 15px 20px 5px; color: var(--secondary-color); }
+.project-card p { padding: 0 20px 15px; font-size: 0.9rem; }
+/* Link "Lihat Detail" */
+.link-project {
+    display: block;
+    padding: 0 20px 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ==========================================================
+   7. TIMELINE ORGANISASI
+   ========================================================== */
+/* Garis vertikal timeline */
+.timeline { border-left: 3px solid var(--primary-color); padding-left: 20px; margin-left: 10px; }
+/* Item timeline */
+.timeline-item { margin-bottom: 30px; position: relative; }
+/* Titik bulat pada timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px; /* Posisi titik di garis */
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+}
+.timeline-item h3 { font-size: 1.1rem; color: var(--secondary-color); }
+.timeline-item .date { font-size: 0.85rem; color: var(--primary-color); font-weight: 600; display: block; margin-bottom: 5px; }
+
+/* ==========================================================
+   8. FOOTER
+   ========================================================== */
+.footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0 20px;
+}
+.footer h2 { margin-bottom: 10px; }
+/* Container link kontak */
+.contact-links { margin: 20px 0; display: flex; justify-content: center; gap: 20px; }
+.contact-links a:hover { color: var(--primary-color); text-decoration: underline; }
+.copyright { font-size: 0.8rem; opacity: 0.7; margin-top: 30px; }
+
+/* ==========================================================
+   9. RESPONSIVITAS (MOBILE)
+   ========================================================== */
+/* Media query untuk layar <= 768px (tablet & mobile) */
+@media (max-width: 768px) {
+    /* Sembunyikan menu navigasi di mobile (bisa diganti dengan hamburger menu) */
+    .nav-links { display: none; }
+    /* Ubah layout hero menjadi vertikal (gambar di atas teks) */
+    .hero-content { flex-direction: column-reverse; text-align: center; }
+    .hero-text h2 { font-size: 2rem; }
+    .hero-buttons { justify-content: center; }
+    /* Perkecil ukuran gambar profil */
+    .hero-image img { width: 180px; height: 180px; }
+    /* Ubah link kontak menjadi vertikal */
+    .contact-links { flex-direction: column; gap: 10px; }
+}
