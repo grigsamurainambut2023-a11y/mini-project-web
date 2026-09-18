@@ -1,0 +1,160 @@
+<!-- Deklarasi tipe dokumen HTML5 -->
+<!DOCTYPE html>
+<!-- Tag html dengan atribut bahasa Indonesia -->
+<html lang="id">
+<head>
+    <!-- Meta charset untuk encoding karakter universal -->
+    <meta charset="UTF-8">
+    <!-- Meta viewport agar tampilan responsif di perangkat mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta deskripsi untuk SEO (Search Engine Optimization) -->
+    <meta name="description" content="Portofolio Mahasiswa Teknik Informatika">
+    <!-- Judul yang tampil di tab browser -->
+    <title>Portofolio | Mahasiswa TI</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Import font Poppins dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <!-- Navigasi utama yang sticky di atas halaman -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <!-- Logo website -->
+            <h1 class="logo">MyPorto<span>.</span></h1>
+            <!-- Daftar link navigasi -->
+            <ul class="nav-links">
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#kompetensi">Kompetensi</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#organisasi">Organisasi</a></li>
+                <!-- Tombol kontak dengan class khusus -->
+                <li><a href="#kontak" class="btn-contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================= HERO / PROFIL SECTION ================= -->
+    <!-- Section utama yang menampilkan perkenalan diri -->
+    <header id="profil" class="hero">
+        <div class="container hero-content">
+            <!-- Bagian teks perkenalan -->
+            <div class="hero-text">
+                <h2>Halo, Saya <span>Grignton A.S Nambut</span></h2>
+                <p>Mahasiswa Teknik Informatika yang berfokus pada Web Development dan UI/UX Design. Berpengalaman dalam membangun aplikasi web modern menggunakan teknologi terkini.</p>
+                <!-- Tombol aksi (Call to Action) -->
+                <div class="hero-buttons">
+                    <a href="#kontak" class="btn primary">Hubungi Saya</a>
+                    <!-- target="_blank" membuka link di tab baru -->
+                    <a href="https://github.com/grignton" target="_blank" class="btn secondary">GitHub Saya</a>
+                </div>
+            </div>
+            <!-- Bagian gambar profil -->
+            <div class="hero-image">
+                <!-- Placeholder gambar, ganti dengan foto asli -->
+                <img src="c:\Users\grigs\Pictures\WhatsApp Image 2026-09-10 at 16.56.58.jpeg" alt="Foto Profil">
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= KOMPETENSI SECTION ================= -->
+    <!-- Section keahlian teknis dengan background terang -->
+    <section id="kompetensi" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Kompetensi Teknis</h2>
+            <!-- Grid untuk menampilkan kartu-kartu skill -->
+            <div class="skills-grid">
+                <div class="skill-card">HTML5 & CSS3</div>
+                <div class="skill-card">JavaScript (React/Vue)</div>
+                <div class="skill-card">Node.js & Express</div>
+                <div class="skill-card">UI/UX Design (Figma)</div>
+                <div class="skill-card">Database (MySQL/MongoDB)</div>
+                <div class="skill-card">Git & Version Control</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROYEK SECTION ================= -->
+    <!-- Section daftar proyek yang pernah dikerjakan -->
+    <section id="proyek" class="section">
+        <div class="container">
+            <h2 class="section-title">Daftar Proyek</h2>
+            <!-- Grid untuk kartu proyek -->
+            <div class="projects-grid">
+                <!-- Proyek 1 -->
+                <div class="project-card">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-img"></div>
+                    <h3>Sistem Informasi Akademik</h3>
+                    <p>Aplikasi berbasis web untuk manajemen data mahasiswa dan nilai.</p>
+                    <a href="#" class="link-project">Lihat Detail &rarr;</a>
+                </div>
+                <!-- Proyek 2 -->
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>E-Commerce Sederhana</h3>
+                    <p>Website toko online dengan fitur keranjang belanja dan checkout.</p>
+                    <a href="#" class="link-project">Lihat Detail &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ORGANISASI SECTION ================= -->
+    <!-- Section pengalaman organisasi dengan tampilan timeline -->
+    <section id="organisasi" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Organisasi</h2>
+            <!-- Container timeline -->
+            <div class="timeline">
+                <!-- Item timeline 1 -->
+                <div class="timeline-item">
+                    <h3>Anggota Divisi Web - Himpunan Mahasiswa TI</h3>
+                    <span class="date">2023 - Sekarang</span>
+                    <p>Anggota tim dalam pengembangan website</p>
+                </div>
+                <!-- Item timeline 2 -->
+                <div class="timeline-item">
+                    <h3>Anggota - Komunitas Developer Kampus</h3>
+                    <span class="date">2022 - 2023</span>
+                    <p>Berkolaborasi dalam proyek open source dan mengadakan workshop coding dasar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KONTAK & FOOTER ================= -->
+    <footer id="kontak" class="footer">
+        <div class="container footer-content">
+            <h2>Mari Berkolaborasi</h2>
+            <p>Terbuka untuk diskusi proyek, magang, atau kolaborasi lainnya.</p>
+            <!-- Link kontak -->
+            <div class="contact-links">
+                <a href="mailto:email@example.com">Email</a>
+                <a href="https://linkedin.com/in/grignton">LinkedIn</a>
+                <a href="https://github.com/grignton">GitHub</a>
+            </div>
+            <!-- Copyright -->
+            <p class="copyright">&copy; 2024 Grignton A.S Nambut. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPT INTERAKSI ================= -->
+    <script>
+        // Mengambil semua link yang diawali dengan tanda '#'
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Menambahkan event listener saat link diklik
+            anchor.addEventListener('click', function (e) {
+                // Mencegah perilaku default (lompat langsung)
+                e.preventDefault();
+                // Scroll halus menuju elemen target
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
